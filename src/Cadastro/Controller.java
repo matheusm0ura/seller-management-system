@@ -1,4 +1,4 @@
-package application;
+package Cadastro;
 
 public class Controller {
 }
