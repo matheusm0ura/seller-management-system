@@ -24,6 +24,7 @@ import model.services.DepartmentService;
 import model.services.SellerService;
 
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
@@ -121,12 +122,32 @@ public class VendedorFormController implements Initializable {
         if (txtNome.getText() == null || txtNome.getText().trim().equals("")){
             exception.addError("nome", "O nome não pode ser vazio");
         }
+        obj.setName(txtNome.getText());
+
+        if (txtEmail.getText() == null || txtEmail.getText().trim().equals("")){
+            exception.addError("email", "O email não pode ser vazio");
+        }
+        obj.setEmail(txtEmail.getText());
+
+        if (dpNascimento.getValue() == null){
+            exception.addError("nascimento", "O campo não pode ser nulo");
+        }
+        else {
+            Instant instant = Instant.from(dpNascimento.getValue().atStartOfDay(ZoneId.systemDefault()));
+            obj.setBirthDate(Date.from(instant));
+        }
+
+        if (txtSalario.getText() == null || txtSalario.getText().trim().equals("")){
+            exception.addError("salario", "O salário não pode ser vazio");
+        }
+        obj.setBaseSalary(Utils.tryParseToDouble(txtSalario.getText()));
+        obj.setDepartment(comboBoxDepartment.getValue());
+
 
         if (exception.getErros().size() > 0){
             throw exception;
         }
 
-        obj.setName(txtNome.getText());
 
         return obj;
     }
@@ -197,6 +218,31 @@ public class VendedorFormController implements Initializable {
         if (fields.contains("nome")){
             labelNomeErro.setText(errors.get("nome"));
         }
+        else {
+            labelNomeErro.setText("");
+        }
+
+        if (fields.contains("email")){
+            labelErroEmail.setText(errors.get("email"));
+        }
+        else {
+           labelErroEmail.setText("");
+        }
+
+        if (fields.contains("salario")){
+            labelErroSalario.setText(errors.get("salario"));
+        }
+        else {
+            labelErroSalario.setText("");
+        }
+        if (fields.contains("nascimento")){
+            labelErroDate.setText(errors.get("nascimento"));
+        }
+        else {
+            labelErroDate.setText("");
+        }
+
+
     }
 
     private void initializeComboBoxDepartment() {

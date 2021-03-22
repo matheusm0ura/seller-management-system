@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dbUtil.DB;
+import guiCadastro.ListaVendedorController;
 import guiUtil.Alerts;
 import guiUtil.Constraints;
 import javafx.event.ActionEvent;
@@ -71,6 +72,7 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage) this.loginButton.getScene().getWindow();
                 stage.close();
                 cadastro();
+
             }
 
             if (this.senha.getText().isEmpty() || this.usuario.getText().isEmpty()){
