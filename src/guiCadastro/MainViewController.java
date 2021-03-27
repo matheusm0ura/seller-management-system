@@ -13,11 +13,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import model.entities.Department;
 import model.services.DepartmentService;
+import model.services.PhoneService;
 import model.services.SellerService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 public class MainViewController implements Initializable {
@@ -30,6 +32,9 @@ public class MainViewController implements Initializable {
 
     @FXML
     private MenuItem menuItemSobre;
+
+    @FXML
+    private MenuItem menuItemTelefone;
 
     @FXML
     public void onMenuItemVendedorAction(){
@@ -50,6 +55,15 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void onMenuItemTelefoneAction(){
+        loadView("/guiCadastro/ListaTelefone.fxml", (ListaTelefoneController controller) -> {
+            controller.setPhoneService(new PhoneService());
+            controller.updateTableView();
+
+        });
+    }
+
+    @FXML
     public void onMenuItemSobreAction(){
         loadView("/guiCadastro/About.fxml", x -> {});
     }
@@ -60,10 +74,10 @@ public class MainViewController implements Initializable {
 
     }
 
-    private synchronized <T> void loadView(String absoluteName, Consumer<T> inicializingAction){
+    public synchronized static <T> void loadView(String absoluteName, Consumer<T> inicializingAction){
         //O synchronized vai fazer com que a aplicação gráfica rode sem interrupção.
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+            FXMLLoader loader = new FXMLLoader(MainViewController.class.getResource(absoluteName));
             VBox newVbox = loader.load();
 
             Scene cadastroScene = LoginController.getCadastroScene();

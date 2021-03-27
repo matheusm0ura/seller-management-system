@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiCadastro.ListaVendedorController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiCadastro.ListaVendedorController">
    <children>
       <Label prefHeight="20.0" prefWidth="230.0" text="Registro de vendedor">
          <font>
@@ -27,12 +27,12 @@
       <TableView fx:id="tableViewSeller" onSort="#updateTableView" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Nome" />
-            <TableColumn fx:id="tableColumnEmail" prefWidth="75.0" text="Email" />
-            <TableColumn fx:id="tableColumnNascimento" prefWidth="118.39996337890625" text="Data de nascimento" />
-            <TableColumn fx:id="tableColumnSalario" prefWidth="72.79998779296875" text="Salário" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="75.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="75.0" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="100.00003814697266" text="Nome" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="148.800048828125" text="Email" />
+            <TableColumn fx:id="tableColumnNascimento" prefWidth="118.4000244140625" text="Data de nascimento" />
+            <TableColumn fx:id="tableColumnSalario" prefWidth="63.199951171875" text="Salário" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="67.20004272460938" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="75.20001220703125" />
         </columns>
       </TableView>
    </children>

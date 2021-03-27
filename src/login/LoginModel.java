@@ -13,9 +13,6 @@ public class LoginModel {
 
     public LoginModel() {
         this.conn = DB.getConnection();
-        //if (this.conn == null){
-            //System.exit(1);
-        //}
     }
 
     public boolean isDataBaseConnected(){

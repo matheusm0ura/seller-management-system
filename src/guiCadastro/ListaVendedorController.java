@@ -68,6 +68,13 @@ public class ListaVendedorController implements Initializable, DataChangeListene
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeNodes();
+        tableColumnId.setStyle( "-fx-alignment: CENTER;");
+        tableColumnNome.setStyle( "-fx-alignment: CENTER;");
+        tableColumnEmail.setStyle( "-fx-alignment: CENTER;");
+        tableColumnSalario.setStyle( "-fx-alignment: CENTER;");
+        tableColumnNascimento.setStyle( "-fx-alignment: CENTER;");
+        tableColumnEDIT.setStyle( "-fx-alignment: CENTER;");
+        tableColumnREMOVE.setStyle( "-fx-alignment: CENTER;");
     }
 
     private void initializeNodes() {

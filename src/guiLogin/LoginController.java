@@ -5,27 +5,32 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dbUtil.DB;
 import guiCadastro.ListaVendedorController;
+import guiCadastro.MainViewController;
 import guiUtil.Alerts;
 import guiUtil.Constraints;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import login.LoginModel;
+import model.services.SellerService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 public class LoginController implements Initializable {
 
@@ -72,38 +77,17 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage) this.loginButton.getScene().getWindow();
                 stage.close();
                 cadastro();
-
             }
 
             if (this.senha.getText().isEmpty() || this.usuario.getText().isEmpty()){
-                /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.initStyle(StageStyle.UNDECORATED);
-                alert.getDialogPane().setPrefSize(350, 50);
 
-                alert.setTitle("");
-                alert.setHeaderText(null);
-                alert.setContentText("Por favor, insira suas credenciais.");
-
-                alert.showAndWait();
-                */
                 Alerts.showAlert("", "", "Por favor, insira suas credenciais.", Alert.AlertType.INFORMATION, "UNDECORATED", 350, 50);
-
             }
 
             else if (!this.loginModel.isLogin(this.usuario.getText(), this.senha.getText())){
-                /*Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.initStyle(StageStyle.UNDECORATED);
-                alert.getDialogPane().setPrefSize(350, 50);
 
-                alert.setTitle("");
-                alert.setHeaderText(null);
-                alert.setContentText("Credenciais incorretas.");
-
-                alert.showAndWait();
-                */
                 Alerts.showAlert("", "", "Credenciais incorretas", Alert.AlertType.ERROR, "UNDECORATED", 350, 50);
                 clearFields();
-
             }
 
         }catch (Exception localException){
@@ -128,11 +112,17 @@ public class LoginController implements Initializable {
 
             controlStage.setScene(cadastroScene);
             controlStage.show();
+            MainViewController.loadView("/guiCadastro/ListaVendedor.fxml", (ListaVendedorController controller) -> {
+                controller.setSellerService(new SellerService());
+                controller.updateTableView();
+
+            });
 
         }catch (IOException e){
             e.printStackTrace();
         }
     }
+
 
     public static Scene getCadastroScene(){
         return cadastroScene;
@@ -149,6 +139,5 @@ public class LoginController implements Initializable {
         this.usuario.setText("");
         this.senha.setText("");
     }
-
 
 }
