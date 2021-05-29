@@ -4,7 +4,8 @@ Tecnologias utilizadas neste projeto:
 - [x] JavaFx
 - [x] SQL
 
-Projeto feito em equipe. 
+**OBS:** Projeto feito em equipe. 
+
 Integrantes: 
-*Matheus Moura 
-*Igor Fontenele
+* Matheus Moura 
+* Igor Fontenele
