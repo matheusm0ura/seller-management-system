@@ -1,1 +1,1 @@
-# Projeto feito em equipe para a disciplina de Banco de Dados 
+# Sitema de gerenciamento de vendedores
