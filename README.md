@@ -9,3 +9,7 @@ Tecnologias utilizadas neste projeto:
 Integrantes: 
 * Matheus Moura 
 * Igor Fontenele
+
+Baseamos-nos no curso "Java COMPLETO Programação Orientada a Objetos + Projetos" do **Prof. Dr. Nelio Alves**.
+
+
