@@ -4,7 +4,7 @@ Tecnologias utilizadas neste projeto:
 - [x] JavaFx
 - [x] SQL
 
-**OBS:** Projeto feito em equipe. 
+**OBS:** Projeto feito em equipe para a disciplina de Banco de Dados. 
 
 Integrantes: 
 * Matheus Moura 
