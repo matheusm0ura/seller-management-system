@@ -10,6 +10,6 @@ Integrantes:
 * Matheus Moura 
 * Igor Fontenele
 
-Baseamos-nos no curso "Java COMPLETO Programação Orientada a Objetos + Projetos" do **Prof. Dr. Nelio Alves**.
+Baseamos-nos no curso "Java COMPLETO Programação Orientada a Objetos + Projetos" do **Prof. Dr. Nelio Alves**, mas fizemos alterações, incluindos novas entidades para deixar o sistema mais completo.
 
 
