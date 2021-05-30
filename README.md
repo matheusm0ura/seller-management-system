@@ -1,8 +1,9 @@
 # Sitema de gerenciamento de vendedores
 Tecnologias utilizadas neste projeto:
-- [x] Java
-- [x] JavaFx
-- [x] SQL
+✔️ Java
+✔️ JavaFx
+✔️ SQL
+
 
 **OBS:** Projeto feito em equipe para a disciplina de Banco de Dados. 
 
