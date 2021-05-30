@@ -8,7 +8,7 @@ Tecnologias utilizadas neste projeto:
 
 Integrantes: 
 * Matheus Moura 
-* Igor Fontenele
+* Igor Fontenele (https://github.com/igorfontenelle)
 
 Baseamos-nos no curso "Java COMPLETO Programação Orientada a Objetos + Projetos" do **Prof. Dr. Nelio Alves**, mas fizemos alterações, incluindo novas entidades para deixar o sistema mais completo.
 
