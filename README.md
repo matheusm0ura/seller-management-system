@@ -1,4 +1,4 @@
-# Sitema de gerenciamento de vendedores
+# Sistema de gerenciamento de vendedores
 Tecnologias utilizadas neste projeto:
 
 ✅ Java  
